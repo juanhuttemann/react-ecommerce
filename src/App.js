@@ -14,6 +14,7 @@ import { createStructuredSelector } from 'reselect';
 import { selectCurrentUser } from './redux/user/user.selector';
 import CheckoutPage from './pages/checkout/checkout.component';
 
+
 class App extends React.Component {
   unsubscribeFromAuth = null
 
@@ -28,11 +29,8 @@ class App extends React.Component {
               id: snapShot.id,
               ...snapShot.data(),
           });
-
           console.log(this.state)
-          
         });
-        
       }
       setCurrentUser(userAuth)
     })
@@ -60,7 +58,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
+  currentUser: selectCurrentUser,
 })
 
 const mapDispatchToProps = dispatch => ({
